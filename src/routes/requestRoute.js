@@ -18,10 +18,7 @@ router.route('/request').post((req, res) => {
   
 
   const fundrequired = Number(req.body.fundrequired);
-  var image = new Item();
-  newItem.img.data = fs.readFileSync(req.files.userPhoto.path)
-  newItem.img.contentType = ‘image/png’;
-  newItem.save();
+
 
   const newRequest = new Request({
     username,
