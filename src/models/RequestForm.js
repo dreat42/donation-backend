@@ -11,6 +11,7 @@ const requestSchema = new Schema(
     fundrequired: {type: Number, required: true},
     fundraised: {type: Number, required: true},
     upi: {type: String, required: true},
+     image: {type: String, required: true},
 
   },
   {
