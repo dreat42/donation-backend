@@ -2,6 +2,20 @@ const router = require('express').Router();
 
 let Request = require('../models/RequestForm.js');
 
+router.route('/displayreq/:id').post((req, res) => {
+  Request.findById(req.params.id)
+    .then(request => {
+      request.fundraised = Number(req.body.fundraised);
+
+      request
+        .save()
+        .then(() => res.json('fundraised updated!'))
+        .catch(err => res.status(400).json('Error: ' + err));
+    })
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
+
 router.route('/displayreq').get((req, res) => {
   Request.find()
     .then(requests => res.json(requests))
