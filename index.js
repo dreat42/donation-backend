@@ -9,7 +9,7 @@ const authRoutes = require('./src/routes/authRoutes');
 
 const requireAuth = require('./src/middlewares/requireAuth');
 const requestRouter = require('./src/routes/requestRoute');
-const feedback = require('./src/routes/feedback');
+const feedback = require('./src/routes/feedbackRoute');
 
 
 const app = express();
